@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10172b">
+  <title>Jigsaw Garage — เกมต่อภาพรถ</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">JIGSAW GARAGE</p>
+      <h1>ต่อภาพให้ครบทุกชิ้น</h1>
+      <p class="hero-copy">พักสมองสักนิด แล้วค่อย ๆ ต่อรถคันนี้ให้สมบูรณ์</p>
+    </header>
+
+    <section class="game-panel" aria-label="เกมจิ๊กซอว์">
+      <div class="toolbar">
+        <label class="difficulty-control" for="difficulty">
+          <span>ระดับความยาก</span>
+          <select id="difficulty">
+            <option value="easy">ง่าย · 12 ชิ้น</option>
+            <option value="medium">กลาง · 24 ชิ้น</option>
+            <option value="hard">ยาก · 60 ชิ้น</option>
+            <option value="impossible">เป็นไปไม่ได้ · 150 ชิ้น</option>
+          </select>
+        </label>
+
+        <div class="actions">
+          <button class="button button-secondary" id="start-button" type="button">เริ่มด่าน</button>
+          <button class="button button-auto" id="auto-current-button" type="button">Auto: ด่านนี้</button>
+          <button class="button button-auto-all" id="auto-all-button" type="button">Auto: ทุกด่าน</button>
+          <button class="button button-music" id="music-button" type="button" aria-pressed="false">♫ เพลง: ปิด</button>
+          <button class="button button-stop" id="stop-auto-button" type="button" hidden>หยุด Auto</button>
+        </div>
+      </div>
+
+      <div class="game-info">
+        <p id="game-status" class="game-status" role="status" aria-live="polite">กำลังโหลดภาพเกม…</p>
+        <p id="progress" class="progress">0 / 12 ชิ้น</p>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="puzzle" width="1100" height="700" aria-label="กระดานจิ๊กซอว์ ลากชิ้นส่วนไปวางบนกระดาน">
+          เบราว์เซอร์นี้ไม่รองรับ Canvas
+        </canvas>
+      </div>
+      <p class="hint">กระดานซ่อนภาพต้นฉบับ · ลากชิ้นส่วนไปวางให้ตรงตำแหน่ง ชิ้นส่วนที่วางถูกจะล็อกเข้าที่</p>
+      <p class="visually-hidden" id="audio-feedback" role="status" aria-live="polite"></p>
+    </section>
+
+    <footer class="footer-note">สร้างจากภาพ car.jpg · เล่นได้บนเว็บเบราว์เซอร์</footer>
+  </main>
+</body>
+</html>
